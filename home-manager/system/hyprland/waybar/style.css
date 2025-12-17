@@ -1,0 +1,153 @@
+@define-color textcolor #FFFFFF;
+/* @define-color textcolor #7287fd; */
+
+* {
+  font:
+    bold 14px "JetbrainsMono Nerd Font Propo",
+    FontAwesome,
+    sans-serif;
+
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  text-shadow: none;
+  color: @textcolor;
+  font-weight: 900;
+}
+
+#window {
+  margin: 0px 0px 0px 0px;
+  padding: 2px 0px 2px 0px;
+  background: transparent;
+  border: 4px solid @textcolor;
+  border-radius: 10px;
+  color: @textcolor;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+#bluetooth,
+#clock,
+#battery,
+#network,
+#pulseaudio {
+  margin: 0px 0px;
+  padding: 0px 4px;
+  background: transparent;
+  color: @textcolor;
+  border-radius: 10px;
+}
+
+#workspaces {
+  border: 2px solid @textcolor;
+  background: transparent;
+  margin-left: 2px;
+  padding: 1px;
+  border-radius: 10px;
+  
+}
+
+/* FIXED: Added proper button styling */
+#workspaces button {
+  color: @textcolor;
+  padding: 0 8px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* FIXED: Changed to proper focused class */
+#workspaces button.focused {
+  color: #f38ba8;
+  background: transparent;
+  /* Removed red test background */
+}
+
+#workspaces button.visible {
+  color: #f9e2af;
+}
+
+/* FIXED: Urgent workspace styling */
+#workspaces button.urgent {
+  color: #f9e2af;
+  animation: urgent-flash 1s infinite;
+}
+
+@keyframes urgent-flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* FIXED: Added hover effect for buttons, not container */
+#workspaces button:hover,
+#bluetooth:hover,
+#clock:hover,
+#battery:hover,
+#network:hover,
+#pulseaudio:hover {
+  background-color: #b4befe;
+  color: #1e1e2e;
+  /* Add contrast for readability */
+}
+
+#bluetooth.on {
+  color: #f38ba8;
+}
+
+#pulseaudio.muted {
+  color: #f38ba8;
+}
+
+#network.disconnected {
+  color: #f38ba8;
+}
+
+#power-profiles-daemon {
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+#power-profiles-daemon.performance{
+  color: #f9e2af;
+}
+
+#power-profiles-daemon.power-saver{
+  color: #a6e3a1;
+}
+
+#battery.charging {
+  color: #f9e2af;
+}
+
+#battery.plugged {
+  color: #a6e3a1;
+}
+
+
+#battery.critical:not(.charging) {
+  background-color: transparent;
+  color: #f38ba8;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    color: @textcolor;
+  }
+}

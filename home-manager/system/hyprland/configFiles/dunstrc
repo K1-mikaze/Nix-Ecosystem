@@ -1,0 +1,43 @@
+[global]
+    # General settings
+    monitor = 2
+    width = (200,200)
+    height = (30,30)
+    origin = bottom-center
+    offset = (0,-36)
+    scale = 0
+    notification_limit = 3
+    progress_bar = false
+    transparency = 0
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 4
+    frame_width = 2
+    separator_color = frame
+    background = "#000000"
+    foreground = "#eff1f5"
+    alignment = center
+
+    # Font settings
+    font = Monospace 10
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+
+    # Icons
+    icon_position = center 
+    max_icon_size = 32
+    browser = brave %s
+
+[urgency_low]
+    frame_color = "#f9e2af"
+    timeout = 3
+
+[urgency_normal]
+    frame_color = "#FFFFFF"
+    timeout = 6
+
+[urgency_critical]
+    frame_color = "#f38ba8"
+    timeout = 8
+
