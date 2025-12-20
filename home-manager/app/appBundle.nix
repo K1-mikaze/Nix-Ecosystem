@@ -5,5 +5,6 @@
     ./infomatic/mendeley.nix
     ./infomatic/only-office.nix
     ./infomatic/video-editing.nix
+    ./others/spotify.nix
   ];
 }

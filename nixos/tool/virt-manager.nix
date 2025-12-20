@@ -1,12 +1,11 @@
 {
-  pkgs,
   lib,
   config,
   ...
 }: {
-  options.tool.virt-manager.enable = lib.mkEnableOption "Enables Virtual manager.";
+  options.tool.virtManager.enable = lib.mkEnableOption "Enables Virtual manager.";
 
-  config = lib.mkIf config.tool.virt-manager.enable {
+  config = lib.mkIf config.tool.virtManager.enable {
     specialisation = {
       VM.configuration = {
         users.users.k1.extraGroups = ["libvirtd"];

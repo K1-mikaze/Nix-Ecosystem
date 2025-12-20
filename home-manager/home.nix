@@ -10,16 +10,17 @@
     ./system/systemBundle.nix
   ];
 
-
   development = {
     IDE = {
       jetbrains = {
         intellij.enable = false;
         android-studio.enable = false;
-        ideavim.enable = lib.mkIf (
-           config.development.IDE.jetbrains.intellij.enable || 
-           config.development.IDE.jetbrains.android-studio.enable
-        ) true;
+        ideavim.enable =
+          lib.mkIf (
+            config.development.IDE.jetbrains.intellij.enable
+            || config.development.IDE.jetbrains.android-studio.enable
+          )
+          true;
       };
       vscode.enable = false;
       netbeans.enable = false;
@@ -43,7 +44,7 @@
       penpot.enable = true;
       github.enable = false;
       notion.enable = false;
-
+      discord.enable = true;
     };
   };
 
@@ -57,6 +58,7 @@
       only-office.enable = true;
       mendeley.enable = false;
       video-editing.enable = false;
+      spotify.enable = true;
     };
   };
 
@@ -70,16 +72,11 @@
       bash.enable = false;
       zsh.enable = true;
       tools.enable = lib.mkDefault true;
-      alias = {
-        general.enable = true;
-      };
     };
   };
 
-
   system.hyprland.enable = false;
-  systemd.obsidian-sync.enable = true;
-
+  systemd.obsidian-sync.enable = lib.mkIf (config.development.tool.obsidian.enable) true;
 
   nixpkgs.config = {
     allowUnfree = true;

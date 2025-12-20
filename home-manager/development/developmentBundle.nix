@@ -17,5 +17,6 @@
     ./tool/obsidian.nix
     ./tool/github.nix
     ./tool/notion.nix
+    ./tool/discord.nix
   ];
 }

@@ -26,8 +26,7 @@
 
     profile = {
       battery = {
-        set60.enable = true;
-        set90.enable = true;
+        setBatteryLimit.enable = true;
       };
     };
   };
@@ -43,7 +42,7 @@
     tomcat.enable = false;
     docker.enable = true;
     nginx.enable = false;
-    virt-manager.enable = false;
+    virtManager.enable = false;
   };
 
   boot.loader = {

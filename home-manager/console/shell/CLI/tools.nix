@@ -25,9 +25,9 @@
       wl-clipboard
       curl
       opencode
-      btop
       tree
       marksman
+      prettier
       yaml-language-server
     ];
 
@@ -35,6 +35,25 @@
       format = "ffmpeg -i";
       unrar = "unrar x";
       tree = "tree --gitignore -C | less";
+      cat = "bat --theme='Catppuccin Mocha' --color=always {}";
+      nvimf = "fzf -m --preview='bat --theme=\"Catppuccin Mocha\" --color=always {}' --bind 'enter:become(nvim {+})'";
+      cdf = "cd '$(find ~ -type d \( -name '.git' -prune \) -o -type d -print | fzf --preview='ls {}' --bind 'enter:accept')'";
+      fm = "xdg-open";
+    };
+
+    home.sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
+
+    programs.btop = {
+      enable = true;
+      settings = {
+        color_theme = "TTY";
+        theme_background = false;
+        vim_keys = true;
+        rounded_corners = true;
+      };
     };
   };
 }

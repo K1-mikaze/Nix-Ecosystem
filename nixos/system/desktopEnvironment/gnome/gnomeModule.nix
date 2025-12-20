@@ -14,7 +14,6 @@
 
   config = lib.mkIf config.system.desktop_environment.gnome.enable {
     environment.systemPackages = with pkgs; [
-      # kitty
       foot
     ];
 
