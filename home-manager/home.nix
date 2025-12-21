@@ -39,6 +39,14 @@
       lua.enable = false;
     };
 
+    database = {
+      sqlite.enable = false;
+      mysql.enable = true;
+      postgresql.enable = true;
+      mongodb.enable = true;
+      redis.enable = false;
+    };
+
     tool = {
       obsidian.enable = false;
       penpot.enable = true;

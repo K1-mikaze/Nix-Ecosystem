@@ -18,5 +18,10 @@
     ./tool/github.nix
     ./tool/notion.nix
     ./tool/discord.nix
+    ./database/mysql.nix
+    ./database/postgresql.nix
+    ./database/redis.nix
+    ./database/mongodb.nix
+    ./database/sqlite.nix
   ];
 }
