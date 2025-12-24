@@ -10,13 +10,10 @@
     ./language/lua.nix
     ./language/csharp.nix
     ./IDE/vscode/vscode.nix
-    ./IDE/netbeans/netbeans.nix
     ./IDE/jetbrains/jetbrains.nix
     ./IDE/helix/helix.nix
     ./tool/penpot.nix
     ./tool/obsidian.nix
-    ./tool/github.nix
-    ./tool/notion.nix
     ./tool/discord.nix
     ./database/mysql.nix
     ./database/postgresql.nix

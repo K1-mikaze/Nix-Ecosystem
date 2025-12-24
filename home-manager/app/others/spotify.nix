@@ -4,9 +4,9 @@
   config,
   ...
 }: {
-  options.app.infomatic.spotify.enable = lib.mkEnableOption "Enable Spotify";
+  options.app.other.spotify.enable = lib.mkEnableOption "Enable Spotify";
 
-  config = lib.mkIf config.app.infomatic.spotify.enable {
+  config = lib.mkIf config.app.other.spotify.enable {
     home.packages = with pkgs; [
       spotify
     ];

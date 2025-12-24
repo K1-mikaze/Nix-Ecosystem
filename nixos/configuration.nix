@@ -33,14 +33,14 @@
 
   database = {
     mysql.enable = false;
-    sqlite.enable = true;
+    sqlite.enable = false;
     postgresql.enable = false;
     enableAll = false;
   };
 
   tool = {
     tomcat.enable = false;
-    docker.enable = true;
+    docker.enable = false;
     nginx.enable = false;
     virtManager.enable = false;
   };

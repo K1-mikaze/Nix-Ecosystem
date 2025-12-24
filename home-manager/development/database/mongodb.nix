@@ -8,7 +8,7 @@
 
   config = lib.mkIf config.development.database.mongodb.enable {
     home.packages = with pkgs; [
-      mongodb
+      mongosh
     ];
   };
 }

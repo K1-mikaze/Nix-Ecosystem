@@ -24,7 +24,8 @@
       zoxide
       wl-clipboard
       curl
-      opencode
+      gemini-cli
+      posting
       tree
       marksman
       prettier
@@ -55,5 +56,7 @@
         rounded_corners = true;
       };
     };
+
+    home.file.".config/posting/config.yaml".source = ../../../development/settings/configurations/posting-config.yaml;
   };
 }

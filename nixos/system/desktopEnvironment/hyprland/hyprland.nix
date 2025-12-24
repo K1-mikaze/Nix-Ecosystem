@@ -19,7 +19,7 @@ in {
     environment.systemPackages = with pkgs; [
       xfce.thunar
       mpv
-      kitty
+      foot
       hyprpaper
       wl-clipboard
       lm_sensors

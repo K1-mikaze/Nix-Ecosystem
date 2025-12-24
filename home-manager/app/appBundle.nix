@@ -6,5 +6,6 @@
     ./infomatic/only-office.nix
     ./infomatic/video-editing.nix
     ./others/spotify.nix
+    ./others/spotube.nix
   ];
 }

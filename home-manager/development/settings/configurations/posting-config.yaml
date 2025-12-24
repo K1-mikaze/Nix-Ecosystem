@@ -1,0 +1,7 @@
+theme: catppuccin-mocha
+layout: horizontal
+collection_browser:
+  show_on_startup: false
+editor: nvim
+heading:
+  show_version: false

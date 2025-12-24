@@ -11,6 +11,26 @@
   ];
 
   development = {
+    language = {
+      nix.enable = true;
+      rust.enable = false;
+      typescript.enable = false;
+      dart.enable = false;
+      java.enable = false;
+      python.enable = false;
+      cpp.enable = false;
+      csharp.enable = false;
+      lua.enable = false;
+    };
+
+    database = {
+      sqlite.enable = false;
+      mysql.enable = false;
+      postgresql.enable = true;
+      mongodb.enable = true; # Doesn't work, the installation never ends'
+      redis.enable = false;
+    };
+
     IDE = {
       jetbrains = {
         intellij.enable = false;
@@ -27,46 +47,9 @@
       helix.enable = false;
     };
 
-    language = {
-      nix.enable = true;
-      rust.enable = false;
-      typescript.enable = false;
-      dart.enable = false;
-      java.enable = false;
-      python.enable = false;
-      cpp.enable = false;
-      csharp.enable = false;
-      lua.enable = false;
-    };
-
-    database = {
-      sqlite.enable = false;
-      mysql.enable = true;
-      postgresql.enable = true;
-      mongodb.enable = true;
-      redis.enable = false;
-    };
-
     tool = {
       obsidian.enable = false;
       penpot.enable = true;
-      github.enable = false;
-      notion.enable = false;
-      discord.enable = true;
-    };
-  };
-
-  app = {
-    browser = {
-      brave.enable = false;
-      firefox.enable = true;
-    };
-
-    infomatic = {
-      only-office.enable = true;
-      mendeley.enable = false;
-      video-editing.enable = false;
-      spotify.enable = true;
     };
   };
 
@@ -83,7 +66,23 @@
     };
   };
 
-  system.hyprland.enable = false;
+  app = {
+    browser = {
+      brave.enable = false;
+      firefox.enable = true;
+    };
+
+    infomatic = {
+      only-office.enable = true;
+      mendeley.enable = false;
+      video-editing.enable = false;
+    };
+    other = {
+      spotify.enable = true;
+      spotube.enable = false;
+      discord.enable = true;
+    };
+  };
   systemd.obsidian-sync.enable = lib.mkIf (config.development.tool.obsidian.enable) true;
 
   nixpkgs.config = {
