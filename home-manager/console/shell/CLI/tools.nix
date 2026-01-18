@@ -13,33 +13,27 @@
   config = lib.mkIf config.console.shell.tools.enable {
     home.packages = with pkgs; [
       git
-      nitch
       zip
       unzip
       unrar
       ripgrep
+      eza
       fzf
       bat
       ffmpeg
       zoxide
       wl-clipboard
       curl
-      gemini-cli
+      opencode
       posting
-      tree
-      marksman
-      prettier
-      yaml-language-server
     ];
 
     home.shellAliases = {
       format = "ffmpeg -i";
       unrar = "unrar x";
-      tree = "tree --gitignore -C | less";
-      cat = "bat --theme='Catppuccin Mocha' --color=always {}";
-      nvimf = "fzf -m --preview='bat --theme=\"Catppuccin Mocha\" --color=always {}' --bind 'enter:become(nvim {+})'";
-      cdf = "cd '$(find ~ -type d \( -name '.git' -prune \) -o -type d -print | fzf --preview='ls {}' --bind 'enter:accept')'";
+      cat = "bat --theme='Catppuccin Mocha' --color=always";
       fm = "xdg-open";
+      ls = "eza --icons=auto --git";
     };
 
     home.sessionVariables = {

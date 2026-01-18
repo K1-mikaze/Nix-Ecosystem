@@ -4,29 +4,9 @@
   lib,
   ...
 }: {
-  options.system.desktop_environment.gnome.services.configuration.enable = lib.mkEnableOption "Enable Gnome Extensions";
+  options.system.desktop_environment.gnome.custom.keymaps.enable = lib.mkEnableOption "Enable Gnome Extensions";
 
-  config = lib.mkIf config.system.desktop_environment.gnome.services.configuration.enable {
-    services.gnome = {
-      core-apps.enable = true;
-      core-developer-tools.enable = false;
-      games.enable = false;
-      gnome-keyring.enable = true;
-    };
-
-    security.pam = {
-      services.sudo.fprintAuth = false;
-      services.gdm-fingerprint.fprintAuth = true;
-      services.gdm.enableGnomeKeyring = true;
-    };
-
-    services = {
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-      power-profiles-daemon.enable = true;
-      fprintd.enable = true;
-    };
-
+  config = lib.mkIf config.system.desktop_environment.gnome.custom.keymaps.enable {
     programs.dconf = {
       profiles.user.databases = [
         {
@@ -49,10 +29,6 @@
               binding = "<Super>b";
             };
 
-            "org/gnome/desktop/interface" = {
-              accent-color = "purple";
-              color-scheme = "prefer-dark";
-            };
             "org/gnome/desktop/input-sources" = {
               xkb-options = ["caps:escape"];
               sources = [(pkgs.lib.gvariant.mkTuple ["xkb" "latam"])];

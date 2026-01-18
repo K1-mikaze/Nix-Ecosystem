@@ -16,12 +16,11 @@
 
   system = {
     desktop_environment = {
-      hyprland.enable = false;
       gnome.enable = true;
     };
 
     shell = {
-      zsh.enable = true;
+      zsh.enable = false;
     };
 
     profile = {
@@ -40,9 +39,10 @@
 
   tool = {
     tomcat.enable = false;
-    docker.enable = false;
+    docker.enable = true;
     nginx.enable = false;
     virtManager.enable = false;
+    steam.enable = true;
   };
 
   boot.loader = {
@@ -93,7 +93,13 @@
   users.users.k1 = {
     isNormalUser = true;
     description = "K1 ";
-    extraGroups = ["networkmanager" "wheel" "video" "kvm" "adbusers"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+      "kvm"
+      # "adbusers"
+    ];
   };
 
   system.stateVersion = "25.05"; # Did you read the comment?

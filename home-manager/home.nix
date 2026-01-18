@@ -12,7 +12,7 @@
 
   development = {
     language = {
-      nix.enable = true;
+      nix.enable = false;
       rust.enable = false;
       typescript.enable = false;
       dart.enable = false;
@@ -26,24 +26,23 @@
     database = {
       sqlite.enable = false;
       mysql.enable = false;
-      postgresql.enable = true;
-      mongodb.enable = true; # Doesn't work, the installation never ends'
+      postgresql.enable = false;
+      mongodb.enable = false;
       redis.enable = false;
     };
 
     IDE = {
       jetbrains = {
-        intellij.enable = false;
-        android-studio.enable = false;
         ideavim.enable =
           lib.mkIf (
             config.development.IDE.jetbrains.intellij.enable
             || config.development.IDE.jetbrains.android-studio.enable
           )
           true;
+        intellij.enable = false;
+        android-studio.enable = false;
       };
       vscode.enable = false;
-      netbeans.enable = false;
       helix.enable = false;
     };
 
@@ -60,38 +59,38 @@
     };
 
     shell = {
-      bash.enable = false;
-      zsh.enable = true;
+      bash.enable = true;
+      zsh.enable = false;
       tools.enable = lib.mkDefault true;
     };
   };
 
   app = {
     browser = {
-      brave.enable = false;
-      firefox.enable = true;
+      brave.enable = true;
+      firefox.enable = false;
     };
 
     infomatic = {
-      only-office.enable = true;
+      only-office.enable = false;
       mendeley.enable = false;
       video-editing.enable = false;
     };
     other = {
-      spotify.enable = true;
+      spotify.enable = false;
       spotube.enable = false;
       discord.enable = true;
     };
   };
+
   systemd.obsidian-sync.enable = lib.mkIf (config.development.tool.obsidian.enable) true;
 
-  nixpkgs.config = {
-    allowUnfree = true;
+  home = {
+    username = "k1";
+    homeDirectory = "/home/k1";
+    stateVersion = "25.11";
   };
 
-  home.username = "k1";
-  home.homeDirectory = "/home/k1";
-
-  home.stateVersion = "25.05"; # Please read the comment before changing.
+  nixpkgs.config.allowUnfree = true;
   programs.home-manager.enable = true;
 }

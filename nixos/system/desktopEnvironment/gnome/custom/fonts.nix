@@ -4,9 +4,9 @@
   lib,
   ...
 }: {
-  options.system.desktop_environment.gnome.fonts.enable = lib.mkEnableOption "Enable Gnome Fonts";
+  options.system.desktop_environment.gnome.custom.fonts.enable = lib.mkEnableOption "Enable Gnome Fonts";
 
-  config = lib.mkIf config.system.desktop_environment.gnome.fonts.enable {
+  config = lib.mkIf config.system.desktop_environment.gnome.custom.fonts.enable {
     fonts = {
       packages = with pkgs; [
         nerd-fonts.jetbrains-mono

@@ -14,7 +14,6 @@
     ./IDE/helix/helix.nix
     ./tool/penpot.nix
     ./tool/obsidian.nix
-    ./tool/discord.nix
     ./database/mysql.nix
     ./database/postgresql.nix
     ./database/redis.nix
