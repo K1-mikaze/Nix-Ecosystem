@@ -4,20 +4,18 @@
   lib,
   ...
 }: {
-  options.system.desktop_environment.gnome.services.exclude.enable = lib.mkEnableOption "Enable Gnome Extensions";
+  options.system.desktop.gnome.services.exclude.enable = lib.mkEnableOption "Enable Gnome Extensions";
 
-  config = lib.mkIf config.system.desktop_environment.gnome.services.exclude.enable {
+  config = lib.mkIf config.system.desktop.gnome.services.exclude.enable {
     environment.gnome.excludePackages = with pkgs; [
       baobab # disk usage analyzer
       cheese # photo booth
       epiphany # web browser
-      # gedit # text editor#
       simple-scan # document scanner
       yelp # help viewer
       evince # document viewer
+      geary
       file-roller # archive manager
-      geary # email client
-
       gnome-characters
       gnome-clocks
       gnome-contacts

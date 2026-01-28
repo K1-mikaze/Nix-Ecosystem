@@ -1,5 +1,5 @@
 {
   imports = [
-    ./systemd/obsidian-sync.nix
+    ./desktop/gnome/gnomeModule.nix
   ];
 }

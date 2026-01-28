@@ -15,8 +15,9 @@
   };
 
   system = {
-    desktop_environment = {
+    desktop = {
       gnome.enable = true;
+      kdePlasma.enable = false;
     };
 
     shell = {
@@ -41,7 +42,7 @@
     tomcat.enable = false;
     docker.enable = true;
     nginx.enable = false;
-    virtManager.enable = false;
+    virtManager.enable = true;
     steam.enable = true;
   };
 
@@ -98,7 +99,6 @@
       "wheel"
       "video"
       "kvm"
-      # "adbusers"
     ];
   };
 

@@ -67,7 +67,7 @@
 
   app = {
     browser = {
-      brave.enable = true;
+      brave.enable = false;
       firefox.enable = false;
     };
 
@@ -83,7 +83,9 @@
     };
   };
 
-  systemd.obsidian-sync.enable = lib.mkIf (config.development.tool.obsidian.enable) true;
+  system = {
+    desktop.gnome.enable = true;
+  };
 
   home = {
     username = "k1";
