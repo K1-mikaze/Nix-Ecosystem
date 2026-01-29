@@ -20,7 +20,7 @@
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
           name = "Open terminal";
           command = "foot";
-          binding = "<Super>t";
+          binding = "<Super>c";
         };
 
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {

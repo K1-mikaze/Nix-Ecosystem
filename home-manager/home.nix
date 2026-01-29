@@ -48,7 +48,7 @@
 
     tool = {
       obsidian.enable = false;
-      penpot.enable = true;
+      penpot.enable = false;
     };
   };
 
@@ -67,7 +67,7 @@
 
   app = {
     browser = {
-      brave.enable = false;
+      brave.enable = true;
       firefox.enable = false;
     };
 

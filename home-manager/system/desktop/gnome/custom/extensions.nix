@@ -16,6 +16,7 @@
       pkgs.gnomeExtensions.tactile
       pkgs.gnomeExtensions.app-name-indicator
       pkgs.gnomeExtensions.auto-move-windows
+      pkgs.gnomeExtensions.caffeine
       pkgs-unstable.gnomeExtensions.cronomix
     ];
 
@@ -26,12 +27,13 @@
           disable-user-extensions = false;
           enabled-extensions = [
             pkgs.gnomeExtensions.user-themes.extensionUuid
-            pkgs.gnomeExtensions.auto-move-windows.extensionUuid
             pkgs.gnomeExtensions.blur-my-shell.extensionUuid
-            pkgs.gnomeExtensions.touchpad-switcher.extensionUuid
             pkgs.gnomeExtensions.removable-drive-menu.extensionUuid
-            pkgs.gnomeExtensions.app-name-indicator.extensionUuid
+            pkgs.gnomeExtensions.touchpad-switcher.extensionUuid
             pkgs.gnomeExtensions.tactile.extensionUuid
+            pkgs.gnomeExtensions.app-name-indicator.extensionUuid
+            pkgs.gnomeExtensions.auto-move-windows.extensionUuid
+            pkgs.gnomeExtensions.caffeine.extensionUuid
             pkgs-unstable.gnomeExtensions.cronomix.extensionUuid
           ];
         };

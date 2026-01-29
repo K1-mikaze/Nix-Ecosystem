@@ -7,9 +7,11 @@
 
   config = lib.mkIf config.system.desktop.kdePlasma.enable {
     services = {
-      displayManager.sddm.enable = true;
       desktopManager.plasma6.enable = true;
-      displayManager.sddm.wayland.enable = true;
+      displayManager.sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
     };
   };
 }

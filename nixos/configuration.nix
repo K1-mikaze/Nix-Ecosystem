@@ -16,6 +16,7 @@
 
   system = {
     desktop = {
+      cosmic.enable = false;
       gnome.enable = true;
       kdePlasma.enable = false;
     };
