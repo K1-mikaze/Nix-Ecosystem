@@ -36,7 +36,6 @@
     mysql.enable = false;
     sqlite.enable = false;
     postgresql.enable = false;
-    enableAll = false;
   };
 
   tool = {

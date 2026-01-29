@@ -77,9 +77,10 @@
       video-editing.enable = false;
     };
     other = {
+      ferdium.enable = true;
       spotify.enable = false;
       spotube.enable = false;
-      discord.enable = true;
+      discord.enable = false;
     };
   };
 

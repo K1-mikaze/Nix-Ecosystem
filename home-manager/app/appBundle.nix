@@ -8,5 +8,6 @@
     ./others/spotify.nix
     ./others/spotube.nix
     ./others/discord.nix
+    ./others/ferdium.nix
   ];
 }
