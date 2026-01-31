@@ -72,12 +72,14 @@
     };
 
     infomatic = {
+      gradia.enable = true;
+      planify.enable = true;
       only-office.enable = false;
       mendeley.enable = false;
       video-editing.enable = false;
     };
     other = {
-      ferdium.enable = true;
+      tangram.enable = true;
       spotify.enable = false;
       spotube.enable = false;
       discord.enable = false;

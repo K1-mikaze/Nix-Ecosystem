@@ -46,14 +46,22 @@
         };
 
         "org/gnome/desktop/wm/keybindings" = {
-          move-to-workspace-1 = ["<Super><Shift>1"];
-          move-to-workspace-2 = ["<Super><Shift>2"];
-          move-to-workspace-3 = ["<Super><Shift>3"];
-          move-to-workspace-4 = ["<Super><Shift>4"];
-          switch-to-workspace-1 = ["<Super>1"];
-          switch-to-workspace-2 = ["<Super>2"];
-          switch-to-workspace-3 = ["<Super>3"];
-          switch-to-workspace-4 = ["<Super>4"];
+          move-to-workspace-1 = ["<Ctrl><Alt><Shift>1"];
+          move-to-workspace-2 = ["<Ctrl><Alt><Shift>2"];
+          move-to-workspace-3 = ["<Ctrl><Alt><Shift>3"];
+          move-to-workspace-4 = ["<Ctrl><Alt><Shift>4"];
+          switch-to-workspace-1 = ["<Ctrl><Alt>1"];
+          switch-to-workspace-2 = ["<Ctrl><Alt>2"];
+          switch-to-workspace-3 = ["<Ctrl><Alt>3"];
+          switch-to-workspace-4 = ["<Ctrl><Alt>4"];
+        };
+
+        "org/gnome/shell/app-switcher" = {
+          current-workspace-only = true;
+        };
+
+        "org/gnome/desktop/peripherals/touchpad" = {
+          click-method = "areas";
         };
 
         "org/gnome/mutter" = {
