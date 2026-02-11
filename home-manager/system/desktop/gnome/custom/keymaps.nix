@@ -20,13 +20,13 @@
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
           name = "Open terminal";
           command = "foot";
-          binding = "<Super>c";
+          binding = "<Super><Shift>t";
         };
 
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
           name = "Open the Web browser";
           command = "brave";
-          binding = "<Super>b";
+          binding = "<Super><Shift>b";
         };
 
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
@@ -45,17 +45,6 @@
           sources = [(pkgs.lib.gvariant.mkTuple ["xkb" "latam"])];
         };
 
-        "org/gnome/desktop/wm/keybindings" = {
-          move-to-workspace-1 = ["<Ctrl><Alt><Shift>1"];
-          move-to-workspace-2 = ["<Ctrl><Alt><Shift>2"];
-          move-to-workspace-3 = ["<Ctrl><Alt><Shift>3"];
-          move-to-workspace-4 = ["<Ctrl><Alt><Shift>4"];
-          switch-to-workspace-1 = ["<Ctrl><Alt>1"];
-          switch-to-workspace-2 = ["<Ctrl><Alt>2"];
-          switch-to-workspace-3 = ["<Ctrl><Alt>3"];
-          switch-to-workspace-4 = ["<Ctrl><Alt>4"];
-        };
-
         "org/gnome/shell/app-switcher" = {
           current-workspace-only = true;
         };
@@ -65,10 +54,62 @@
         };
 
         "org/gnome/mutter" = {
-          dynamic-workspaces = false;
+          dynamic-workspaces = true;
         };
 
-        "org/gnome/desktop/wm/preferences".num-workspaces = lib.gvariant.mkUint32 4;
+        "org/gnome/mutter/keybindings" = {
+          toggle-tiled-left = [""];
+          toggle-tiled-right = [""];
+        };
+
+        "org/gnome/settings-daemon/plugins/media-keys" = {
+          screensaver = [];
+        };
+
+        "org/gnome/shell/extensions/paperwm" = {
+          show-window-position-bar = false;
+          horizontal-margin = 5;
+          selection-border-radius-top = 5;
+          selection-border-size = 5;
+          vertical-margin = 5;
+          vertical-margin-bottom = 5;
+          window-gap = 10;
+        };
+
+        "org/gnome/desktop/wm/keybindings" = {
+          close = ["<Super>x"];
+        };
+
+        "org/gnome/shell/extensions/paperwm/keybindings" = {
+          switch-left = [""];
+          switch-right = [""];
+          switch-down = [""];
+          switch-up = [""];
+          swap-monitor-below = [""];
+          swap-monitor-above = [""];
+          switch-global-left = ["<Super>h"];
+          switch-global-right = ["<Super>l"];
+          switch-global-down = ["<Super>j"];
+          switch-global-up = ["<Super>k"];
+          move-left = ["<Control><Super>h"];
+          move-right = ["<Control><Super>l"];
+          move-up = ["<Control><Super>k"];
+          move-down = ["<Control><Super>j"];
+          move-monitor-right = ["<Alt><Super>l"];
+          move-monitor-left = ["<Alt><Super>h"];
+          move-down-workspace = ["<Alt><Super>j"];
+          move-up-workspace = ["<Alt><Super>k"];
+          switch-monitor-above = ["<Shift><Super>k"];
+          switch-monitor-below = ["<Shift><Super>j"];
+          switch-monitor-right = ["<Shift><Super>l"];
+          switch-monitor-left = ["<Shift><Super>h"];
+          switch-up-workspace = ["<Control><Alt>k"];
+          switch-down-workspace = ["<Control><Alt>j"];
+          move-space-monitor-right = ["<Shift><Control><Alt>l"];
+          move-space-monitor-left = ["<Shift><Control><Alt>h"];
+          move-space-monitor-above = ["<Shift><Control><Alt>k"];
+          move-space-monitor-below = ["<Shift><Control><Alt>j"];
+        };
       };
     };
   };

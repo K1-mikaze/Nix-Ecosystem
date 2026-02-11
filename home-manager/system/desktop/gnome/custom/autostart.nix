@@ -33,7 +33,7 @@
       settings = {
         "org/gnome/shell/extensions/auto-move-windows" = {
           application-list = [
-            "re.sonny.Tangram.desktop:2"
+            "re.sonny.Tangram.desktop:1"
             "io.github.alainm23.planify.desktop:1"
           ];
         };

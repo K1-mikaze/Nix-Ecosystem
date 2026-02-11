@@ -1,20 +1,25 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   lib,
   ...
 }: {
   options.system.desktop.gnome.custom.extensions.enable = lib.mkEnableOption "Enable Gnome Extensions";
 
   config = lib.mkIf config.system.desktop.gnome.custom.extensions.enable {
-    home.packages = [
-      pkgs.gnomeExtensions.removable-drive-menu
-      pkgs.gnomeExtensions.touchpad-switcher
-      pkgs.gnomeExtensions.tactile
-      pkgs.gnomeExtensions.app-name-indicator
-      pkgs.gnomeExtensions.auto-move-windows
-      pkgs.gnomeExtensions.caffeine
-      pkgs.gnomeExtensions.dynamic-panel
+    home.packages = with pkgs.gnomeExtensions; [
+      removable-drive-menu
+      touchpad-switcher
+      app-name-indicator
+      caffeine
+      just-perfection
+      quick-settings-audio-panel
+      gsconnect
+      transparent-top-bar-adjustable-transparency
+      top-panel-logo
+      paperwm
+      battery-health-charging
     ];
 
     dconf = {
@@ -22,14 +27,18 @@
       settings = {
         "org/gnome/shell" = {
           disable-user-extensions = false;
-          enabled-extensions = [
-            pkgs.gnomeExtensions.removable-drive-menu.extensionUuid
-            pkgs.gnomeExtensions.touchpad-switcher.extensionUuid
-            pkgs.gnomeExtensions.tactile.extensionUuid
-            pkgs.gnomeExtensions.app-name-indicator.extensionUuid
-            pkgs.gnomeExtensions.auto-move-windows.extensionUuid
-            pkgs.gnomeExtensions.caffeine.extensionUuid
-            pkgs.gnomeExtensions.dynamic-panel.extensionUuid
+          enabled-extensions = with pkgs.gnomeExtensions; [
+            removable-drive-menu.extensionUuid
+            touchpad-switcher.extensionUuid
+            app-name-indicator.extensionUuid
+            caffeine.extensionUuid
+            just-perfection.extensionUuid
+            quick-settings-audio-panel.extensionUuid
+            gsconnect.extensionUuid
+            transparent-top-bar-adjustable-transparency.extensionUuid
+            top-panel-logo.extensionUuid
+            paperwm.extensionUuid
+            battery-health-charging.extensionUuid
           ];
         };
       };

@@ -1,4 +1,4 @@
-{lib, ...}: {
+{...}: {
   imports = [
     ./system/systemBundle.nix
     ./database/databaseBundle.nix
@@ -22,12 +22,12 @@
     };
 
     shell = {
-      zsh.enable = false;
+      zsh.enable = true;
     };
 
     profile = {
       battery = {
-        setBatteryLimit.enable = true;
+        setBatteryLimit.enable = false;
       };
     };
   };

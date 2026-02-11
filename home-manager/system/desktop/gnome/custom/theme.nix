@@ -13,26 +13,46 @@
           color-scheme = "prefer-dark";
           show-battery-percentage = true;
           cursor-theme = "Adwaita";
+          enable-hot-corners = false;
         };
 
         "org/gnome/desktop/a11y/interface" = {
-          high-contrast = true;
+          high-contrast = false;
         };
 
         "org/gnome/desktop/background" = {
-          picture-uri-dark = "file://${../../../../../assets/rose-pine-nix.webp}";
+          picture-uri-dark = "file://${../../../../../assets/blobs-d.svg}";
           picture-uri = "file://${../../../../../assets/nix-catppuccin-latte.png}";
           picture-options = "center";
           color-shading-type = "solid";
         };
 
-        "org/gnome/shell/extensions/dynamic-panel" = {
-          top-margin = 0;
-          transparent = 0;
-          float-width = 100;
-          colors-use-in-static = true;
-          dark-bg-color = "rgb(24,24,24)";
-          light-bg-color = "rgb(249,249,249)";
+        # Transparent top bar
+        "com/ftpix/transparentbar" = {
+          dark-full-screen = true;
+          transparency = 0;
+        };
+
+        "org/gnome/shell/extensions/top-panel-logo" = {
+          icon-path = "${../../../../../assets/NixLogo.png}";
+          icon-size = 25;
+          horizontal-padding = 0;
+        };
+
+        "org/gnome/shell/extensions/quick-settings-audio-panel" = {
+          panel-type = "merged-panel";
+          remove-output-volume-slider = true;
+          master-volume-sliders-show-current-device = true;
+        };
+
+        "org/gnome/shell/extensions/just-perfection" = {
+          accessibility-menu = false;
+          quick-settings-night-light = false;
+          quick-settings-airplane-mode = false;
+        };
+
+        "org/gnome/shell/extensions/Battery-Health-Charging" = {
+          indicator-position = 5;
         };
       };
     };

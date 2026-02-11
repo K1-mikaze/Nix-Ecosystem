@@ -7,9 +7,13 @@
     ./infomatic/video-editing.nix
     ./infomatic/gradia.nix
     ./infomatic/planify.nix
-    ./others/spotify.nix
-    ./others/spotube.nix
+    ./infomatic/teams.nix
+    ./music/spotify.nix
+    ./music/spotube.nix
+    ./music/gapless.nix
     ./others/discord.nix
+    ./others/element.nix
     ./others/tangram.nix
+    ./others/ferdium.nix
   ];
 }

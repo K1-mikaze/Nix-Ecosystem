@@ -59,8 +59,8 @@
     };
 
     shell = {
-      bash.enable = true;
-      zsh.enable = false;
+      bash.enable = false;
+      zsh.enable = true;
       tools.enable = lib.mkDefault true;
     };
   };
@@ -74,15 +74,23 @@
     infomatic = {
       gradia.enable = true;
       planify.enable = true;
-      only-office.enable = false;
+      only-office.enable = true;
+      teams.enable = true;
       mendeley.enable = false;
       video-editing.enable = false;
     };
-    other = {
-      tangram.enable = true;
+
+    music = {
       spotify.enable = false;
       spotube.enable = false;
-      discord.enable = false;
+      gapless.enable = true;
+    };
+
+    other = {
+      ferdium.enable = false;
+      tangram.enable = true;
+      discord.enable = true;
+      element.enable = false;
     };
   };
 
