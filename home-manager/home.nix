@@ -83,14 +83,14 @@
     music = {
       spotify.enable = false;
       spotube.enable = false;
-      gapless.enable = true;
+      gapless.enable = false;
     };
 
     other = {
       ferdium.enable = false;
       tangram.enable = true;
       discord.enable = true;
-      element.enable = false;
+      element.enable = true;
     };
   };
 
