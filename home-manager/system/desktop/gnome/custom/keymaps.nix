@@ -19,14 +19,14 @@
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
           name = "Open terminal";
-          command = "foot";
-          binding = "<Super><Shift>t";
+          command = "kgx";
+          binding = "<Control><Shift>t";
         };
 
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
           name = "Open the Web browser";
           command = "brave";
-          binding = "<Super><Shift>b";
+          binding = "<Control><Shift>b";
         };
 
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {

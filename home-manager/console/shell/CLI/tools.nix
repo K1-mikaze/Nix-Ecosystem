@@ -25,7 +25,6 @@
       wl-clipboard
       curl
       opencode
-      posting
     ];
 
     home.shellAliases = {

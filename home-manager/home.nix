@@ -48,6 +48,7 @@
 
     tool = {
       obsidian.enable = false;
+      logseq.enable = true;
       penpot.enable = false;
     };
   };
@@ -55,7 +56,7 @@
   console = {
     terminal = {
       kitty.enable = false;
-      foot.enable = true;
+      foot.enable = false;
     };
 
     shell = {
@@ -83,14 +84,14 @@
     music = {
       spotify.enable = false;
       spotube.enable = false;
-      gapless.enable = false;
+      gapless.enable = true;
     };
 
     other = {
-      ferdium.enable = false;
       tangram.enable = true;
       discord.enable = true;
-      element.enable = true;
+      ferdium.enable = false;
+      element.enable = false;
     };
   };
 

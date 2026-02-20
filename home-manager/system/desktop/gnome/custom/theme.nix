@@ -21,8 +21,8 @@
         };
 
         "org/gnome/desktop/background" = {
-          picture-uri-dark = "file://${../../../../../assets/blobs-d.svg}";
-          picture-uri = "file://${../../../../../assets/nix-catppuccin-latte.png}";
+          picture-uri-dark = "file://${../../../../../assets/nix-dark.jpg}";
+          picture-uri = "file://${../../../../../assets/nix-light.jpg}";
           picture-options = "center";
           color-shading-type = "solid";
         };
@@ -42,6 +42,7 @@
         "org/gnome/shell/extensions/quick-settings-audio-panel" = {
           panel-type = "merged-panel";
           remove-output-volume-slider = true;
+          merged-panel-position = "top";
           master-volume-sliders-show-current-device = true;
         };
 
@@ -53,6 +54,13 @@
 
         "org/gnome/shell/extensions/Battery-Health-Charging" = {
           indicator-position = 5;
+        };
+
+        "org.gnome.Console" = {
+          audible-bell = false;
+          theme = "auto";
+          use-system-font = true;
+          font-scale = 1.3;
         };
       };
     };

@@ -20,6 +20,7 @@
       top-panel-logo
       paperwm
       battery-health-charging
+      light-style
     ];
 
     dconf = {
@@ -39,6 +40,7 @@
             top-panel-logo.extensionUuid
             paperwm.extensionUuid
             battery-health-charging.extensionUuid
+            light-style.extensionUuid
           ];
         };
       };

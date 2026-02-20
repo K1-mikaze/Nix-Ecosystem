@@ -28,10 +28,10 @@
       gnome-weather
       gnome-disk-utility
       gnome-connections
-      gnome-terminal
       gnome-text-editor
       gnome-tour
-      gnome-console
+      # gnome-terminal
+      # gnome-console
     ];
     services.xserver.excludePackages = with pkgs; [xterm];
   };
