@@ -33,12 +33,12 @@
 
     IDE = {
       jetbrains = {
-        ideavim.enable =
-          lib.mkIf (
-            config.development.IDE.jetbrains.intellij.enable
-            || config.development.IDE.jetbrains.android-studio.enable
-          )
-          true;
+        ideavim.enable = true;
+        # lib.mkIf (
+        #   config.development.IDE.jetbrains.intellij.enable
+        #   || config.development.IDE.jetbrains.android-studio.enable
+        #  true;
+
         intellij.enable = false;
         android-studio.enable = false;
       };

@@ -9,7 +9,7 @@
     dconf = {
       settings = {
         "org/gnome/desktop/interface" = {
-          accent-color = "purple";
+          accent-color = "blue";
           color-scheme = "prefer-dark";
           show-battery-percentage = true;
           cursor-theme = "Adwaita";
