@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./system/systemBundle.nix
     ./database/databaseBundle.nix
