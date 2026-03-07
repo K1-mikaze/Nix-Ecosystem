@@ -14,7 +14,6 @@
       simple-scan # document scanner
       yelp # help viewer
       evince # document viewer
-      geary
       file-roller # archive manager
       gnome-characters
       gnome-contacts
@@ -30,8 +29,9 @@
       gnome-connections
       gnome-text-editor
       gnome-tour
-      # gnome-terminal
+      gnome-terminal
       # gnome-console
+      # geary
     ];
     services.xserver.excludePackages = with pkgs; [xterm];
   };

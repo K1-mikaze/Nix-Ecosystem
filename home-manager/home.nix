@@ -33,11 +33,12 @@
 
     IDE = {
       jetbrains = {
-        ideavim.enable = true;
-        # lib.mkIf (
-        #   config.development.IDE.jetbrains.intellij.enable
-        #   || config.development.IDE.jetbrains.android-studio.enable
-        #  true;
+        ideavim.enable =
+          lib.mkIf (
+            config.development.IDE.jetbrains.intellij.enable
+            || config.development.IDE.jetbrains.android-studio.enable
+          )
+          true;
 
         intellij.enable = false;
         android-studio.enable = false;
@@ -48,7 +49,7 @@
 
     tool = {
       obsidian.enable = false;
-      logseq.enable = true;
+      logseq.enable = false;
       penpot.enable = false;
     };
   };
@@ -73,10 +74,10 @@
     };
 
     infomatic = {
-      gradia.enable = true;
+      gradia.enable = false;
       planify.enable = true;
       only-office.enable = true;
-      teams.enable = true;
+      teams.enable = false;
       mendeley.enable = false;
       video-editing.enable = false;
     };
@@ -84,12 +85,12 @@
     music = {
       spotify.enable = false;
       spotube.enable = false;
-      gapless.enable = true;
+      gapless.enable = false;
     };
 
     other = {
-      tangram.enable = true;
-      discord.enable = true;
+      tangram.enable = false;
+      discord.enable = false;
       ferdium.enable = false;
       element.enable = false;
     };

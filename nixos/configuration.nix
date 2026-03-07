@@ -40,7 +40,7 @@
 
   tool = {
     tomcat.enable = false;
-    docker.enable = true;
+    docker.enable = false;
     nginx.enable = false;
     virtManager.enable = true;
     steam.enable = true;

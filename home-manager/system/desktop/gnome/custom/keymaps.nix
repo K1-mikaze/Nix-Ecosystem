@@ -66,6 +66,11 @@
           screensaver = [];
         };
 
+        "org/gnome/shell/keybidings" = {
+          toggle-quick-setting = ["<Super>q"];
+          toggle-message-tray = ["<Super>s"];
+        };
+
         "org/gnome/shell/extensions/paperwm" = {
           show-window-position-bar = false;
           horizontal-margin = 5;

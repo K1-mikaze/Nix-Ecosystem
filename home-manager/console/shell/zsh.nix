@@ -20,6 +20,7 @@
         eval "$(zoxide init zsh --cmd cd)"
         source <(fzf --zsh)
         bindkey -v
+        export NIXPKGS_ALLOW_UNFREE=1
       '';
     };
   };

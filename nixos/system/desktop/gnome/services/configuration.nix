@@ -7,16 +7,31 @@
 
   config = lib.mkIf config.system.desktop.gnome.services.configuration.enable {
     security.pam = {
-      services.sudo.fprintAuth = false;
-      services.gdm-fingerprint.fprintAuth = true;
-      services.gdm.enableGnomeKeyring = true;
+      services = {
+        polkit-1.fprintAuth = true;
+        sudo.fprintAuth = false;
+        gdm-fingerprint = {
+          fprintAuth = true;
+        };
+        gdm.enableGnomeKeyring = true;
+        login = {
+          enableGnomeKeyring = true;
+          unixAuth = true;
+        };
+        gdm-password = {
+          enableGnomeKeyring = true;
+          unixAuth = true;
+        };
+      };
     };
 
     services = {
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
       power-profiles-daemon.enable = true;
-      fprintd.enable = true;
+      fprintd = {
+        enable = true;
+      };
       gnome = {
         core-apps.enable = true;
         core-developer-tools.enable = false;

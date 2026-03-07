@@ -33,6 +33,7 @@
         elif [ -f ~/.git-prompt.sh ]; then
           source ~/.git-prompt.sh
         fi
+        export NIXPKGS_ALLOW_UNFREE=1
       '';
     };
     home.file = {

@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   options.system.desktop.gnome.custom.autostart.enable = lib.mkEnableOption "Enable Gnome Extensions";
@@ -27,17 +28,19 @@
           Exec=re.sonny.Tangram
         '';
       })
+      {
+        ".config/autostart/geary.desktop".text = ''
+          [Desktop Entry]
+          Version=1.0
+          Terminal=false
+          Type=Application
+          Name=Geary Service
+          Exec=geary --gapplication-service
+          Hidden=true
+          NoDisplay=true
+          X-GNOME-Autostart-enabled=true
+        '';
+      }
     ];
-
-    dconf = lib.mkIf (config.app.other.tangram.enable || config.app.infomatic.planify.enable) {
-      settings = {
-        "org/gnome/shell/extensions/auto-move-windows" = {
-          application-list = [
-            "re.sonny.Tangram.desktop:1"
-            "io.github.alainm23.planify.desktop:1"
-          ];
-        };
-      };
-    };
   };
 }
