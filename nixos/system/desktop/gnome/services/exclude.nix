@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   options.system.desktop.gnome.services.exclude.enable = lib.mkEnableOption "Enable Gnome Extensions";
 
   config = lib.mkIf config.system.desktop.gnome.services.exclude.enable {
@@ -13,7 +14,6 @@
       epiphany # web browser
       simple-scan # document scanner
       yelp # help viewer
-      evince # document viewer
       file-roller # archive manager
       gnome-characters
       gnome-font-viewer
@@ -28,11 +28,13 @@
       gnome-text-editor
       gnome-tour
       gnome-terminal
+      # evince # document viewer
       # gnome-console
       # gnome-maps
       # gnome-contacts
       # geary
     ];
-    services.xserver.excludePackages = with pkgs; [xterm];
+
+    services.xserver.excludePackages = with pkgs; [ xterm ];
   };
 }

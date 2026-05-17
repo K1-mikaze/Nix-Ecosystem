@@ -2,7 +2,8 @@
   config,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     ./app/appBundle.nix
     ./console/consoleBundle.nix
@@ -33,12 +34,10 @@
 
     IDE = {
       jetbrains = {
-        ideavim.enable =
-          lib.mkIf (
-            config.development.IDE.jetbrains.intellij.enable
-            || config.development.IDE.jetbrains.android-studio.enable
-          )
-          true;
+        ideavim.enable = lib.mkIf (
+          config.development.IDE.jetbrains.intellij.enable
+          || config.development.IDE.jetbrains.android-studio.enable
+        ) true;
 
         intellij.enable = false;
         android-studio.enable = false;
@@ -76,11 +75,13 @@
     infomatic = {
       gradia.enable = true;
       planify.enable = true;
-      only-office.enable = true;
+      libreoffice.enable = true;
+      wordbook.enable = true;
+      affine.enable = true;
+      only-office.enable = false;
       teams.enable = false;
       mendeley.enable = false;
       video-editing.enable = false;
-      affine.enable = true;
     };
 
     music = {
@@ -91,7 +92,7 @@
 
     other = {
       tangram.enable = false;
-      discord.enable = false;
+      discord.enable = true;
       ferdium.enable = false;
       element.enable = false;
     };

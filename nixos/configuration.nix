@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ./system/systemBundle.nix
     ./database/databaseBundle.nix
@@ -7,7 +8,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   services.flatpak.enable = false;
 
@@ -15,7 +19,7 @@
 
   nix.settings = {
     download-buffer-size = 524288000;
-    substituters = ["https://aseipp-nix-cache.global.ssl.fastly.net"];
+    substituters = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
   };
 
   system = {
@@ -43,7 +47,7 @@
   };
 
   tool = {
-    podman.enable = true;
+    podman.enable = false;
     tomcat.enable = false;
     docker.enable = false;
     nginx.enable = false;
@@ -97,8 +101,20 @@
   # programs.adb.enable = true;
 
   users.users.k1 = {
+    subUidRanges = [
+      {
+        startUid = 100000;
+        count = 65536;
+      }
+    ];
+    subGidRanges = [
+      {
+        startGid = 100000;
+        count = 65536;
+      }
+    ];
     isNormalUser = true;
-    description = "K1 ";
+    description = "K1";
     extraGroups = [
       "networkmanager"
       "wheel"

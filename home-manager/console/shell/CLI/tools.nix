@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   imports = [
     ./tmux.nix
   ];
@@ -24,7 +25,7 @@
       zoxide
       wl-clipboard
       curl
-      opencode
+      # opencode
     ];
 
     home.shellAliases = {
@@ -50,6 +51,7 @@
       };
     };
 
-    home.file.".config/posting/config.yaml".source = ../../../development/settings/configurations/posting-config.yaml;
+    home.file.".config/posting/config.yaml".source =
+      ../../../development/settings/configurations/posting-config.yaml;
   };
 }

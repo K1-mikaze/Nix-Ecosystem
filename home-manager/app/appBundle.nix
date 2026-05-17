@@ -4,11 +4,13 @@
     ./browser/firefox.nix
     ./infomatic/mendeley.nix
     ./infomatic/only-office.nix
+    ./infomatic/libreoffice.nix
     ./infomatic/video-editing.nix
     ./infomatic/gradia.nix
     ./infomatic/planify.nix
     ./infomatic/teams.nix
     ./infomatic/affine.nix
+    ./infomatic/wordbook.nix
     ./music/spotify.nix
     ./music/spotube.nix
     ./music/gapless.nix

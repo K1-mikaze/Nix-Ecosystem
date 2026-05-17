@@ -2,7 +2,8 @@
   config,
   lib,
   ...
-}: {
+}:
+{
   options.system.desktop.gnome.custom.theme.enable = lib.mkEnableOption "Enable Gnome Extensions";
 
   config = lib.mkIf config.system.desktop.gnome.custom.theme.enable {
@@ -58,8 +59,9 @@
         };
 
         "org/gnome/shell/extensions/just-perfection" = {
+          overlay-key = false;
           accessibility-menu = false;
-          quick-settings-night-light = false;
+          quick-settings-night-light = true;
           quick-settings-airplane-mode = false;
           show-apps-button = false;
         };
@@ -85,6 +87,8 @@
           vertical-margin = 5;
           vertical-margin-bottom = 5;
           window-gap = 10;
+          disable-topbar-styling = true;
+          overview-ensure-viewport-animation = 0;
         };
 
         # V-Shell Extension
@@ -105,10 +109,16 @@
           ws-switcher-mode = 1;
         };
 
+        # Top Panel Logo Extension
+        "org/gnome/shell/extensions/top-panel-logo" = {
+          left-click-action = 1;
+        };
+
         "org/gnome/shell/extensions/dynamic-music-pill" = {
           enable-transparency = true;
           popup-custom-width = 360;
-          transparency-strength = 0;
+          popup-follow-transparency = true;
+          transparency-strength = 10;
           target-container = 2;
           position-mode = 1;
           border-radius = 4;
@@ -121,7 +131,7 @@
           action-double-click = "next";
           action-middle-click = "none";
           action-hover = "toggle-menu";
-          action-right-click = "open_player_menu";
+          action-right-click = "toggle-menu";
         };
       };
     };
